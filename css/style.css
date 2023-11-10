@@ -1,0 +1,8 @@
+#dropdownContent {
+    display: none;
+    /* Rest of the styles for the dropdown */
+}
+
+#dropdownContent.is-visible {
+    display: block;
+}

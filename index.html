@@ -11,6 +11,52 @@
 </head>
 <body>
 
+<div class="filter-selection">
+    <button id="dropdownButton">ЖК, Округ, Район, Метро (<span id="selectedCount">0</span>)</button>
+    <div class="dropdown-content" id="dropdownContent">
+        <div class="tabs">
+            <button class="tab-button" data-tab-target="zhk">ЖК</button>
+            <button class="tab-button" data-tab-target="okrug">Округ</button>
+            <button class="tab-button" data-tab-target="rayon">Район</button>
+            <button class="tab-button" data-tab-target="metro">Метро</button>
+        </div>
+
+        <div id="selected-filters"></div>
+
+        <div id="zhk" class="tab-content">
+            <label for="academ">Академический</label>
+            <input id="academ" type="checkbox" name="zhk" value="option1">
+            <label for="basman">Басманный</label>
+            <input id="basman" type="checkbox" name="zhk" value="option2">
+            <label for="zamoscvorech">Замоскворечье</label>
+            <input id="zamoscvorech" type="checkbox" name="zhk" value="option3">
+            <label for="izmailovo">Измайлово</label>
+            <input id="izmailovo" type="checkbox" name="zhk" value="option4">
+            <label for="lublino">Люблино</label>
+            <input id="lublino" type="checkbox" name="zhk" value="option5">
+        </div>
+        <div id="okrug" class="tab-content">
+            <label for="okrugA">Округ А</label>
+            <input id="okrugA" type="checkbox" name="okrug" value="option1">
+            <label for="okrugB">Округ Б</label>
+            <input id="okrugB" type="checkbox" name="okrug" value="option2">
+        </div>
+        <div id="rayon" class="tab-content">
+            <label for="rayonNorth">Район Север</label>
+            <input id="rayonNorth" type="checkbox" name="rayon" value="option1">
+            <label for="rayonSouth">Район Юг</label>
+            <input id="rayonSouth" type="checkbox" name="rayon" value="option2">
+        </div>
+        <div id="metro" class="tab-content">
+            <label for="metroRed">Метро Красная</label>
+            <input id="metroRed" type="checkbox" name="metro" value="option1">
+            <label for="metroGreen">Метро Зеленая</label>
+            <input id="metroGreen" type="checkbox" name="metro" value="option2">
+        </div>
+    </div>
+</div>
+
+
 <script src="js/main.js"></script>
 <script src="js/dropdown.js"></script>
 <script src="js/tabs.js"></script>
