@@ -1,6 +1,7 @@
 :root {
     --text-primary: rgba(7, 0, 15, 1);
     --text-secondary: rgba(7, 0, 15, 0.7);
+    --text-tertiary: rgba(7, 0, 15, 0.40);
     --text-on-color: #FFF;
     --bg-primary: #FFF;
     --bg-neutral: rgba(2, 22, 45, 0.05);
@@ -8,7 +9,9 @@
     --bg-accent-hover: #085EDB;
     --border-primary: rgba(7, 0, 15, 0.1);
     --border-primary-hover: rgba(7, 0, 15, 0.40);
+    --border-strong: #07000F;
     --General-Black: rgba(8, 9, 8, 1);
+    --stroke-grey: #E3E6E8;
 }
 
 body {
@@ -28,4 +31,22 @@ body {
 
 #dropdownContent.is-visible {
     display: block;
+}
+
+#dropdownContent::-webkit-scrollbar {
+    width: 4px;
+    height: 160px;
+}
+
+#dropdownContent::-webkit-scrollbar-track {
+    background: transparent;
+}
+
+#dropdownContent::-webkit-scrollbar-thumb {
+    background: url("../svg/scroll.svg") no-repeat center;
+}
+
+#dropdownContent {
+    scrollbar-width: thin;
+    scrollbar-color: #0700FF transparent;
 }

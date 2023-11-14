@@ -5,6 +5,7 @@ document.addEventListener('DOMContentLoaded', function () {
         const selectedFiltersDiv = document.getElementById('selected-filters');
         const selectedCount = document.getElementById('selectedCount');
         selectedFiltersDiv.innerHTML = '';
+        let totalSelected = 0;
 
         Object.keys(selections).forEach(function(category) {
             selections[category].forEach(function(value) {
@@ -17,8 +18,13 @@ document.addEventListener('DOMContentLoaded', function () {
                 listItem.textContent = labelText;
 
                 const deleteBtn = document.createElement('button');
-                deleteBtn.textContent = '✖';
                 deleteBtn.classList.add('delete-filter');
+                const img = document.createElement('img');
+                img.setAttribute('src', '../svg/close.svg');
+                img.setAttribute('alt', 'Delete');
+                deleteBtn.appendChild(img);
+
+
                 deleteBtn.onclick = function (event) {
                     event.stopPropagation();
                     selections[category] = selections[category].filter(function (item) {
@@ -37,8 +43,17 @@ document.addEventListener('DOMContentLoaded', function () {
 
                 listItem.appendChild(deleteBtn);
                 selectedFiltersDiv.appendChild(listItem);
+                totalSelected++;
             });
         });
+
+
+        if (totalSelected > 0) {
+            selectedFiltersDiv.classList.add('selected-filters');
+        } else {
+            selectedFiltersDiv.classList.remove('selected-filters');
+        }
+
 
         if (Object.keys(selections).length > 0) {
             selectedCount.style.display = 'inline';
