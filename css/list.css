@@ -1,0 +1,52 @@
+input[type="checkbox"] {
+    -webkit-appearance: none;
+    -moz-appearance: none;
+    appearance: none;
+    width: 30px;
+    height: 30px;
+    border-radius: 100px;
+    cursor: pointer;
+    border: 1px solid var(--border-primary, rgba(7, 0, 15, 0.10));
+}
+
+input[type="checkbox"]:hover:not(:disabled) {
+    background: var(--bg-neutral, rgba(2, 22, 45, 0.05));
+}
+
+input[type="checkbox"]:disabled {
+    border-radius: 100px;
+    opacity: 0.7;
+    cursor: not-allowed;
+}
+
+input[type="checkbox"]:checked {
+    background: var(--bg-accent, #0067FE);
+    background-image: url('../svg/check.svg');
+    background-repeat: no-repeat;
+    background-position: center;
+}
+
+input[type="checkbox"]:checked:hover {
+    background: var(--bg-accent-hover, #085EDB);
+    background-image: url('../svg/check.svg');
+    background-repeat: no-repeat;
+    background-position: center;
+}
+
+.selected-filter-item {
+    /* TODO: Style for the filter items in the selected filters list */
+    display: inline-block;
+    margin-right: 10px;
+    padding: 5px;
+    background-color: #f2f2f2;
+    border: 1px solid #ccc;
+    border-radius: 3px;
+}
+
+/* TODO: Style for the delete button within each selected filter item */
+.delete-filter {
+    margin-left: 5px;
+    border: none;
+    background: transparent;
+    cursor: pointer;
+}

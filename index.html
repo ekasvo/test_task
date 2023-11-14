@@ -8,11 +8,22 @@
     <link rel="stylesheet" href="css/dropdown.css">
     <link rel="stylesheet" href="css/tabs.css">
     <link rel="stylesheet" href="css/list.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Gloria+Hallelujah&family=Roboto+Condensed&family=Rubik:wght@300;400;500&display=swap"
+          rel="stylesheet">
 </head>
 <body>
-
 <div class="filter-selection">
-    <button id="dropdownButton">ЖК, Округ, Район, Метро (<span id="selectedCount">0</span>)</button>
+    <button id="dropdownButton" class="dropdown-button">
+        <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 16 16" fill="none">
+            <path d="M7.5 13C10.5376 13 13 10.5376 13 7.5C13 4.46243 10.5376 2 7.5 2C4.46243 2 2 4.46243 2 7.5C2 10.5376 4.46243 13 7.5 13Z"
+                  stroke="#080908" stroke-width="2" stroke-linecap="square"/>
+            <path d="M12 12L14 14" stroke="#080908" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+        </svg>
+        ЖК, Округ, район, метро
+        <span id="selectedCount" class="count">0</span>
+    </button>
     <div class="dropdown-content" id="dropdownContent">
         <div class="tabs">
             <button class="tab-button" data-tab-target="zhk">ЖК</button>
@@ -20,42 +31,14 @@
             <button class="tab-button" data-tab-target="rayon">Район</button>
             <button class="tab-button" data-tab-target="metro">Метро</button>
         </div>
-
         <div id="selected-filters"></div>
-
-        <div id="zhk" class="tab-content">
-            <label for="academ">Академический</label>
-            <input id="academ" type="checkbox" name="zhk" value="option1">
-            <label for="basman">Басманный</label>
-            <input id="basman" type="checkbox" name="zhk" value="option2">
-            <label for="zamoscvorech">Замоскворечье</label>
-            <input id="zamoscvorech" type="checkbox" name="zhk" value="option3">
-            <label for="izmailovo">Измайлово</label>
-            <input id="izmailovo" type="checkbox" name="zhk" value="option4">
-            <label for="lublino">Люблино</label>
-            <input id="lublino" type="checkbox" name="zhk" value="option5">
-        </div>
-        <div id="okrug" class="tab-content">
-            <label for="okrugA">Округ А</label>
-            <input id="okrugA" type="checkbox" name="okrug" value="option1">
-            <label for="okrugB">Округ Б</label>
-            <input id="okrugB" type="checkbox" name="okrug" value="option2">
-        </div>
-        <div id="rayon" class="tab-content">
-            <label for="rayonNorth">Район Север</label>
-            <input id="rayonNorth" type="checkbox" name="rayon" value="option1">
-            <label for="rayonSouth">Район Юг</label>
-            <input id="rayonSouth" type="checkbox" name="rayon" value="option2">
-        </div>
-        <div id="metro" class="tab-content">
-            <label for="metroRed">Метро Красная</label>
-            <input id="metroRed" type="checkbox" name="metro" value="option1">
-            <label for="metroGreen">Метро Зеленая</label>
-            <input id="metroGreen" type="checkbox" name="metro" value="option2">
-        </div>
+        <div id="zhk" class="tab-content"></div>
+        <div id="okrug" class="tab-content"></div>
+        <div id="rayon" class="tab-content"></div>
+        <div id="metro" class="tab-content"></div>
+        <div class="dropdown-shadow" id="dropdownShadow"></div>
     </div>
 </div>
-
 
 <script src="js/main.js"></script>
 <script src="js/dropdown.js"></script>

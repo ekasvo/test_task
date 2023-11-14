@@ -3,6 +3,7 @@ document.addEventListener('DOMContentLoaded', function () {
 
     function updateInteractiveList() {
         const selectedFiltersDiv = document.getElementById('selected-filters');
+        const selectedCount = document.getElementById('selectedCount');
         selectedFiltersDiv.innerHTML = '';
 
         Object.keys(selections).forEach(function(category) {
@@ -39,9 +40,14 @@ document.addEventListener('DOMContentLoaded', function () {
             });
         });
 
-        document.getElementById('selectedCount').textContent = Object.values(selections).reduce(function (total, current) {
-            return total + current.length;
-        }, 0);
+        if (Object.keys(selections).length > 0) {
+            selectedCount.style.display = 'inline';
+            selectedCount.textContent = Object.values(selections).reduce(function (total, current) {
+                return total + current.length;
+            }, 0);
+        } else {
+            selectedCount.style.display = 'none';
+        }
     }
 
     const checkboxes = document.querySelectorAll('.tab-content input[type="checkbox"]');
@@ -70,5 +76,4 @@ document.addEventListener('DOMContentLoaded', function () {
             updateInteractiveList();
         });
     });
-
 });
