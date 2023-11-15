@@ -18,6 +18,7 @@
     letter-spacing: -0.32px;
     text-transform: uppercase;
     margin-bottom: 8px;
+    cursor: pointer;
 }
 
 .dropdown-button.active, .dropdown-button:hover {
@@ -35,6 +36,7 @@
     text-align: center;
     line-height: 30px;
     letter-spacing: -0.32px;
+    margin-left: 56px;
 }
 
 .dropdown-content {
@@ -59,4 +61,5 @@
     width: 100%;
     height: 80px;
     background: linear-gradient(180deg, rgba(255, 255, 255, 0.00) 0%, #FFF 100%);
+    pointer-events: none;
 }

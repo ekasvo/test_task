@@ -7,8 +7,8 @@ document.addEventListener('DOMContentLoaded', function () {
         selectedFiltersDiv.innerHTML = '';
         let totalSelected = 0;
 
-        Object.keys(selections).forEach(function(category) {
-            selections[category].forEach(function(value) {
+        Object.keys(selections).forEach(function (category) {
+            selections[category].forEach(function (value) {
                 const listItem = document.createElement('div');
                 listItem.classList.add('selected-filter-item');
 
@@ -23,7 +23,6 @@ document.addEventListener('DOMContentLoaded', function () {
                 img.setAttribute('src', '../svg/close.svg');
                 img.setAttribute('alt', 'Delete');
                 deleteBtn.appendChild(img);
-
 
                 deleteBtn.onclick = function (event) {
                     event.stopPropagation();
@@ -47,13 +46,11 @@ document.addEventListener('DOMContentLoaded', function () {
             });
         });
 
-
         if (totalSelected > 0) {
             selectedFiltersDiv.classList.add('selected-filters');
         } else {
             selectedFiltersDiv.classList.remove('selected-filters');
         }
-
 
         if (Object.keys(selections).length > 0) {
             selectedCount.style.display = 'inline';
@@ -65,9 +62,24 @@ document.addEventListener('DOMContentLoaded', function () {
         }
     }
 
+    document.querySelectorAll('.tab-content .tab-item').forEach(function (div) {
+        div.addEventListener('click', function (event) {
+            if (event.target === div || (!event.target.closest('label') && event.target.type !== 'checkbox')) {
+                let checkbox = div.querySelector('input[type="checkbox"]');
+                if (checkbox && !checkbox.disabled) {
+                    checkbox.checked = !checkbox.checked;
+                    checkbox.dispatchEvent(new Event('change', {
+                        'bubbles': true,
+                        'cancelable': true
+                    }));
+                }
+            }
+        });
+    });
+
     const checkboxes = document.querySelectorAll('.tab-content input[type="checkbox"]');
-    checkboxes.forEach(function(checkbox) {
-        checkbox.addEventListener('change', function() {
+    checkboxes.forEach(function (checkbox) {
+        checkbox.addEventListener('change', function () {
             const category = checkbox.name;
             const checkboxId = checkbox.id;
 
@@ -80,7 +92,7 @@ document.addEventListener('DOMContentLoaded', function () {
                     selections[category].push(checkboxId);
                 }
             } else {
-                selections[category] = selections[category].filter(function(item) {
+                selections[category] = selections[category].filter(function (item) {
                     return item !== checkboxId;
                 });
                 if (selections[category].length === 0) {

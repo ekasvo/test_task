@@ -50,10 +50,19 @@
 }
 
 .tab-item {
+    cursor: pointer;
     display: flex;
     justify-content: space-between;
     width: 286px;
     height: 48px;
     padding: 0 8px 0 16px;
     align-items: center;
+}
+
+.tab-item:hover {
+    background: var(--bg-neutral, rgba(2, 22, 45, 0.05));
+}
+
+.tab-item label {
+    cursor: pointer;
 }

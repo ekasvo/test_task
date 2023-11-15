@@ -33,20 +33,21 @@ body {
     display: block;
 }
 
-#dropdownContent::-webkit-scrollbar {
-    width: 4px;
-    height: 160px;
-}
-
+#dropdownContent::-webkit-scrollbar,
 #dropdownContent::-webkit-scrollbar-track {
+    width: 0px;
     background: transparent;
 }
 
-#dropdownContent::-webkit-scrollbar-thumb {
+#dropdownContent.scrolling::-webkit-scrollbar {
+    width: 4px;
+}
+
+#dropdownContent.scrolling::-webkit-scrollbar-thumb {
     background: url("../svg/scroll.svg") no-repeat center;
 }
 
 #dropdownContent {
     scrollbar-width: thin;
-    scrollbar-color: #0700FF transparent;
+    scrollbar-color: #07000F transparent;
 }

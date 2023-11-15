@@ -38,4 +38,13 @@ document.addEventListener('DOMContentLoaded', function () {
     dropdownButton.addEventListener('click', function () {
         shadowElement.style.display = 'block';
     });
+
+    let scrollTimeout;
+    dropdownContent.addEventListener('scroll', function () {
+        this.classList.add('scrolling');
+        clearTimeout(scrollTimeout);
+        scrollTimeout = setTimeout(() => {
+            this.classList.remove('scrolling');
+        }, 1000);
+    });
 });
