@@ -20,7 +20,7 @@ document.addEventListener('DOMContentLoaded', function () {
                 const deleteBtn = document.createElement('button');
                 deleteBtn.classList.add('delete-filter');
                 const img = document.createElement('img');
-                img.setAttribute('src', '../svg/close.svg');
+                img.setAttribute('src', 'svg/close.svg');
                 img.setAttribute('alt', 'Delete');
                 deleteBtn.appendChild(img);
 
